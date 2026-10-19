@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Юбилей 50 лет | Приглашение</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #10251e;
+      color: #fff8e8;
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 35px 20px;
+      background:
+        linear-gradient(rgba(9, 28, 21, .78),
+                        rgba(9, 28, 21, .91)),
+        url("photo1.jpg") center/cover;
+    }
+
+    .top-text {
+      color: #e2c779;
+      letter-spacing: 5px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 8vw, 68px);
+      font-weight: normal;
+      margin: 25px 0 10px;
+    }
+
+    .number {
+      font-size: clamp(100px, 25vw, 190px);
+      line-height: 1.1;
+      color: #e5c875;
+      text-shadow: 0 0 35px #d4af3730;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .gold {
+      color: #e5c875;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 15px 28px;
+      border: 1px solid #e5c875;
+      border-radius: 3px;
+      color: #e5c875;
+      background: transparent;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .button:hover {
+      background: #e5c875;
+      color: #10251e;
+    }
+
+    section {
+      padding: 75px 20px;
+    }
+
+    .section-label {
+      color: #e5c875;
+      letter-spacing: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(29px, 6vw, 43px);
+      font-weight: normal;
+      margin: 18px 0 25px;
+    }
+
+    .description {
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.9;
+      font-size: 17px;
+      color: #e2e4d8;
+    }
+
+    .divider {
+      width: 65px;
+      height: 1px;
+      background: #e5c875;
+      margin: 25px auto;
+    }
+
+    .date-box {
+      border: 1px solid #9b8854;
+      max-width: 500px;
+      margin: 35px auto 0;
+      padding: 35px 20px;
+    }
+
+    .date {
+      color: #e5c875;
+      font-size: 42px;
+      margin: 15px 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 900px;
+      margin: 35px auto 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid #9b8854;
+    }
+
+    .location {
+      background: #172f25;
+    }
+
+    .location p {
+      line-height: 2;
+      color: #e2e4d8;
+    }
+
+    footer {
+      padding: 45px 20px;
+      color: #e5c875;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .music-button {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 10;
+      border: 1px solid #e5c875;
+      background: #10251eeb;
+      color: #e5c875;
+      padding: 12px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 55px 18px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      .gallery img {
+        height: 350px;
+      }
+
+      .top-text {
+        letter-spacing: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Кнопка музыки -->
+  <audio id="music" src="music.mp3" loop></audio>
+
+  <button class="music-button" id="musicBtn"
+          onclick="toggleMusic()">
+    ♫ Включить музыку
+  </button>
+
+  <!-- Главный экран -->
+  <header class="hero">
+    <div class="top-text">Приглашение на юбилей</div>
+
+    <h1>С юбилеем!</h1>
+
+    <div class="number">50</div>
+
+    <p class="gold">Пятьдесят — прекрасный возраст!</p>
+
+    <div class="divider"></div>
+
+    <p>
+      С радостью приглашаем вас<br>
+      разделить с нами этот особенный день
+    </p>
+
+    <a href="#invitation" class="button">
+      ОТКРЫТЬ ПРИГЛАШЕНИЕ
+    </a>
+  </header>
+
+  <!-- Приглашение -->
+  <section id="invitation">
+    <div class="section-label">Особенный день</div>
+
+    <h2>Дорогие родные и друзья!</h2>
+
+    <p class="description">
+      В жизни есть моменты, которые хочется разделить
+      с самыми близкими людьми. Впереди прекрасный
+      повод собраться вместе, вспомнить счастливые
+      моменты и создать новые воспоминания.
+      Будем счастливы видеть вас на празднике
+      в честь моего 50-летнего юбилея!
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="gold">С теплом и любовью,</p>
+    <h2>Имя юбиляра</h2>
+  </section>
+
+  <!-- Дата и время -->
+  <section>
+    <div class="section-label">Запишите дату</div>
+
+    <h2>Ждём вас!</h2>
+
+    <div class="date-box">
+      <p class="gold">ДАТА ПРАЗДНИКА</p>
+
+      <div class="date">15 ноября</div>
+
+      <p>2026 год</p>
+
+      <div class="divider"></div>
+
+      <p>Начало в 18:00</p>
+    </div>
+  </section>
+
+  <!-- Фотографии -->
+  <section>
+    <div class="section-label">Моменты жизни</div>
+
+    <h2>Немного воспоминаний</h2>
+
+    <p class="description">
+      Самые ценные моменты — те, которые мы
+      разделяем с любимыми людьми.
+    </p>
+
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Фото юбиляра 1">
+      <img src="photo2.jpg" alt="Фото юбиляра 2">
+      <img src="photo3.jpg" alt="Фото юбиляра 3">
+    </div>
+  </section>
+
+  <!-- Место проведения -->
+  <section class="location">
+    <div class="section-label">Место встречи</div>
+
+    <h2>До встречи на празднике!</h2>
+
+    <p>
+      Ресторан: Название ресторана<br>
+      Адрес: Укажите адрес<br>
+      Время: 18:00
+    </p>
+
+    <a
+      class="button"
+      href="https://2gis.kg/bishkek"
+      target="_blank"
+      rel="noopener"
+    >
+      НАЙТИ НА КАРТЕ
+    </a>
+
+    <br>
+
+    <a
+      class="button"
+      href="https://wa.me/996XXXXXXXXX?text=Здравствуйте!%20Я%20буду%20на%20юбилее."
+      target="_blank"
+      rel="noopener"
+    >
+      ПОДТВЕРДИТЬ ПРИСУТСТВИЕ
+    </a>
+  </section>
+
+  <footer>
+    <p>Будем рады разделить этот день с вами!</p>
+    <p>С любовью, семья юбиляра ♡</p>
+    <p>© 2026</p>
+  </footer>
+
+  <script>
+    const music = document.getElementById("music");
+    const musicBtn = document.getElementById("musicBtn");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play().then(() => {
+          musicBtn.textContent = "♫ Выключить музыку";
+        }).catch(() => {
+          alert("Проверьте, что файл music.mp3 находится в папке сайта.");
+        });
+      } else {
+        music.pause();
+        musicBtn.textContent = "♫ Включить музыку";
+      }
+    }
+  </script>
+
+</body>
+</html>
